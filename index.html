@@ -1,27 +1,570 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f6f1e8"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Home Cooked"><link rel="manifest" href="./manifest.webmanifest"><title>Home Cooked</title><style>
-:root{--paper:#f6f1e8;--card:#fffdf8;--ink:#28251f;--muted:#7d7569;--line:rgba(40,37,31,.11);--deep:#302d27;--rail:196px}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-text-size-adjust:100%}button,input,textarea{font:inherit;color:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.top{position:sticky;top:0;z-index:20;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 24px 0 244px;background:rgba(246,241,232,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.top b{font:500 16px Georgia,serif}.top button{border:1px solid var(--line);background:#fffdf8;border-radius:999px;padding:9px 12px;font-size:10px;font-weight:800}.side{position:fixed;z-index:15;left:16px;top:86px;width:196px;padding:10px;border:1px solid var(--line);border-radius:22px;background:rgba(255,253,248,.75);backdrop-filter:blur(18px);box-shadow:0 18px 55px rgba(48,39,27,.08)}.brand{display:flex;gap:9px;align-items:center;padding:3px 5px 11px;font:500 15px Georgia,serif}.mark{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;background:var(--deep);color:#fff}.nav{display:flex;flex-direction:column;gap:3px}.nav a{display:grid;grid-template-columns:32px 1fr;gap:8px;align-items:center;padding:7px;border-radius:13px;font-size:11px}.nav a.active{background:#fff;box-shadow:0 7px 20px rgba(48,39,27,.06)}.nav i{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;background:var(--tone);font-style:normal;font-size:17px}.mnav{display:none}.cover,.recipe{scroll-margin-top:68px}.cover{min-height:calc(100svh - 68px);display:grid;align-items:center;background:radial-gradient(circle at 82% 18%,rgba(202,181,151,.27),transparent 29%),radial-gradient(circle at 18% 82%,rgba(167,183,146,.19),transparent 27%)}.inner{width:min(1080px,calc(100% - 310px));margin-left:250px;padding:74px 0}.cover h1{font:500 clamp(72px,9vw,124px)/.83 Georgia,serif;letter-spacing:-.07em;margin:0}.cover p{max-width:570px;color:var(--muted);font-size:14px;line-height:1.7}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:710px}.stat{padding:16px;border:1px solid var(--line);border-radius:18px;background:rgba(255,253,248,.65)}.stat b{display:block;font:500 23px Georgia,serif}.stat span{font-size:9px;color:var(--muted)}.start{display:inline-flex;margin-top:22px;background:var(--deep);color:white;border-radius:999px;padding:12px 17px;font-size:10px;font-weight:800}.recipe{--tone:#ddd;min-height:100svh;padding:76px 0 86px;border-top:1px solid rgba(40,37,31,.06);background:radial-gradient(circle at 94% 2%,color-mix(in srgb,var(--tone) 30%,transparent),transparent 27%),linear-gradient(180deg,color-mix(in srgb,var(--tone) 11%,var(--paper)) 0,var(--paper) 390px)}.hero{display:grid;grid-template-columns:1fr 132px;gap:30px;align-items:end;margin-bottom:24px}.hero small{font-size:8px;text-transform:uppercase;letter-spacing:.15em;font-weight:850;color:#82796d}.hero h2{font:500 clamp(48px,5.2vw,76px)/.94 Georgia,serif;letter-spacing:-.05em;margin:8px 0 0;max-width:10ch}.hero p{max-width:590px;color:var(--muted);font-size:12px;line-height:1.6}.orb{width:132px;height:132px;border-radius:36px;display:grid;place-items:center;background:var(--tone);font-size:62px}.card{background:rgba(255,253,248,.93);border:1px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:0 24px 70px rgba(48,39,27,.08)}.controls{display:grid;grid-template-columns:300px 1fr;border-bottom:1px solid var(--line)}.serving{display:flex;align-items:center;justify-content:space-between;padding:17px 20px;border-right:1px solid var(--line)}.serving label{font-size:8px;text-transform:uppercase;letter-spacing:.12em;font-weight:850;color:#948b7f}.step{display:flex;align-items:center;gap:5px}.step button{width:31px;height:31px;border:1px solid var(--line);border-radius:50%;background:white}.step input{width:48px;border:0;background:transparent;text-align:center;font-weight:800}.macros{padding:11px 13px}.macrogrid{display:grid;grid-template-columns:repeat(5,1fr)}.macro{padding:6px 10px;border-right:1px solid var(--line)}.macro:last-child{border:0}.macro b{display:block;font:500 18px Georgia,serif}.macro span{display:block;font-size:7px;text-transform:uppercase;color:var(--muted);margin-top:4px}.macro em{display:block;font-size:8px;color:#9d9487;font-style:normal;margin-top:3px}.body{display:grid;grid-template-columns:.94fr 1.06fr}.ingredients,.method{padding:25px 28px 30px}.ingredients{border-right:1px solid var(--line)}h3{font:500 21px Georgia,serif;margin:0 0 13px}.list{list-style:none;padding:0;margin:0}.group{padding:12px 0 5px;font-size:8px;text-transform:uppercase;letter-spacing:.13em;font-weight:850;color:#968c80}.ing{display:grid;grid-template-columns:74px 1fr;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid rgba(40,37,31,.065);font-size:10.5px}.amt{display:flex;align-items:baseline;gap:3px}.amt input{width:51px;border:0;background:transparent;text-align:right;font-size:11px;font-weight:850;outline:0}.amt span{font-size:8px;color:#998f82}.steps{list-style:none;padding:0;margin:0;counter-reset:s}.steps li{counter-increment:s;display:grid;grid-template-columns:28px 1fr;gap:10px;margin-bottom:12px;font-size:10.8px;line-height:1.55;color:#504b43}.steps li:before{content:counter(s);width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--tone) 34%,#fff);font-size:9px;font-weight:850}.note{margin-top:15px;padding:11px 12px;border:1px solid var(--line);border-radius:13px;background:#f4f0e8;font-size:9px;line-height:1.5;color:#615a51}.method textarea{width:100%;min-height:70px;margin-top:10px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:10px;resize:vertical}.toast{position:fixed;z-index:50;left:50%;bottom:20px;transform:translateX(-50%);background:var(--deep);color:#fff;border-radius:999px;padding:9px 13px;font-size:10px;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1}
-@media(max-width:760px){html{scroll-padding-top:104px}.side{display:none}.top{height:56px;padding:0 12px}.top b{font-size:14px;max-width:50vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.top button{font-size:9px;padding:8px 10px}.mnav{position:sticky;top:56px;z-index:19;display:flex;gap:6px;overflow-x:auto;padding:6px 10px 7px;background:rgba(246,241,232,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);scrollbar-width:none}.mnav::-webkit-scrollbar{display:none}.mnav a{flex:none;border:1px solid var(--line);border-radius:999px;padding:8px 11px;background:#fffdf8;font-size:9px;font-weight:800}.mnav a.active{background:var(--deep);color:white}.cover,.recipe{scroll-margin-top:104px}.cover{min-height:calc(100svh - 104px);align-items:start}.inner{width:100%;margin:0;padding:50px 14px}.cover .inner{padding:56px 20px}.cover h1{font-size:clamp(58px,19vw,76px)}.cover p{font-size:12px}.stats{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:1/-1}.start{width:100%;justify-content:center}.recipe{min-height:0;padding:30px 12px 46px}.hero{grid-template-columns:1fr;position:relative;padding:0 4px;margin-bottom:17px}.hero h2{font-size:clamp(38px,11.5vw,47px);padding-right:58px}.hero p{font-size:11px}.orb{position:absolute;right:4px;top:2px;width:54px;height:54px;border-radius:17px;font-size:28px}.card{border-radius:20px}.controls{display:block}.serving{border-right:0;border-bottom:1px solid var(--line);padding:14px 15px}.macros{padding:11px 12px}.macrogrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.macro{border:1px solid var(--line)!important;border-radius:12px;background:rgba(255,255,255,.55);padding:9px 10px}.macro:first-child{grid-column:1/-1}.body{display:block}.ingredients{border-right:0;border-bottom:1px solid var(--line);padding:21px 15px 24px}.method{padding:21px 15px 26px}.ing{grid-template-columns:68px 1fr;font-size:11px}.amt input{width:46px}.steps li{font-size:11px}.method textarea{min-height:82px}}
-</style></head><body><aside class="side"><div class="brand"><span class="mark">⌂</span>Home Cooked</div><nav class="nav" id="nav"></nav></aside><header class="top"><b id="title">Home Cooked</b><button id="copy" hidden>Copy recipe</button></header><nav class="mnav" id="mnav"></nav><main id="app"></main><div class="toast" id="toast"></div><script>
-const N={dried_shiitake:[296,9.58,75.37,.99,11.5],firm_tofu:[144,17.27,2.78,8.72,2.3],silken_tofu:[62,6.9,2.4,2.7,.1],oil:[884,0,0,100,0],water_chestnuts:[50,.88,12.3,.06,2.5],green_onion:[32,1.83,7.34,.19,2.6],iceberg:[14,.9,2.97,.14,1.2],peanuts:[587,24.35,21.26,49.66,8.4],hoisin:[200,0,45,0,0],peanut_butter:[598,22.21,22.31,51.36,5],rice_vinegar:[18,0,.4,0,0],sriracha:[92.3,1.54,20,0,0],sugar:[387,0,99.98,0,0],soy_sauce:[53,8.14,4.93,.57,.8],sesame_oil:[884,0,0,100,0],garlic:[149,6.36,33.06,.5,2.1],ginger:[80,1.82,17.77,.75,2],ginger_powder:[335,8.98,71.62,4.24,14.1],cornstarch:[381,.26,91.27,.05,.9],garlic_powder:[331,16.55,72.73,.73,9],onion_powder:[341,10.41,79.12,1.04,15.2],brown_sugar:[380,.12,98.09,0,0],honey:[304,.3,82.4,0,.2],chili_flakes:[318,12.01,56.63,17.27,27.2],vital_wheat_gluten:[400,76.67,13.33,3.33,0],ketchup:[112,1.3,26,.2,.3],cottage_cheese_4:[98,11.12,3.38,4.3,0],egg:[143,12.56,.72,9.51,0],wheat_flour:[364,10.33,76.31,.98,2.7],banana:[89,1.09,22.84,.33,2.6],milk_2:[50,3.3,4.8,1.98,0],brown_rice_cooked:[123,2.74,25.58,.97,1.6],glass_noodles_dry:[351,.2,86.1,.1,.7],carrot:[41,.93,9.58,.24,2.8],mushrooms:[22,3.09,3.26,.34,1],spinach:[23,2.86,3.63,.39,2.2],sesame_seeds:[573,17.73,23.45,49.67,11.8],onion:[40,1.1,9.34,.1,1.7],sweet_potato:[86,1.57,20.12,.05,3],cumin:[375,17.81,44.24,22.27,10.5],turmeric:[312,9.68,67.14,3.25,22.7],cinnamon:[247,3.99,80.59,1.24,53.1],paprika:[282,14.14,53.99,12.89,34.9],cayenne:[318,12.01,56.63,17.27,27.2],vegan_mayo:[500,0,7.14,57.14,0],lemon_juice:[22,.35,6.9,.24,.3],cilantro:[23,2.1,3.7,.52,2.8],agave:[310,.09,76.37,.45,.2],egg_white:[52,10.9,.73,.17,0],walnuts:[654,15.23,13.71,65.21,6.7],tj_raisin_bagel:[294.1176,10.5882,60,1.7647,2.3529],zero:[0,0,0,0,0]};
-const R=[
-{id:'lettuce',short:'Lettuce Wraps',title:'Tofu Lettuce Wraps',icon:'🥬',tone:'#c9d5b0',base:2,tag:'fresh + saucy',desc:'Crisp tofu, crunchy water chestnuts and a peanut-hoisin sauce tucked into cold lettuce cups.',groups:[['Base',[['dried_shiitake',8,'dried shiitake mushrooms'],['firm_tofu',200,'firm tofu'],['oil',2,'peanut or canola oil'],['water_chestnuts',113,'water chestnuts'],['green_onion',15,'green onion'],['iceberg',275,'iceberg lettuce'],['peanuts',18,'roasted peanuts']]],['Sauce',[['hoisin',32,'hoisin sauce'],['peanut_butter',16,'peanut butter'],['rice_vinegar',7.5,'rice vinegar'],['sriracha',8,'sriracha'],['sugar',2,'sugar'],['soy_sauce',2.5,'soy sauce'],['sesame_oil',2.3,'sesame oil'],['garlic',1.5,'garlic'],['ginger',2.5,'ginger'],['zero',15,'water']]]],steps:['Soak shiitakes in hot water for 15 minutes, squeeze dry and mince.','Mix all sauce ingredients except the finishing water.','Cut tofu small and brown it in the oil until crisp at the edges.','Add mushrooms, water chestnuts and green onion; cook about 1 minute.','Add half the sauce and toss 30 seconds.','Thin remaining sauce with water and serve in lettuce cups with peanuts.']},
-{id:'airtofu',short:'Air-Fryer Tofu',title:'Air-Fryer Saucy Tofu',icon:'◻️',tone:'#e2c3a0',base:1,tag:'crispy + airy',desc:'Torn edges, a light cornstarch shell, minimal oil, then a glossy spicy-sweet sauce.',groups:[['Tofu',[['firm_tofu',400,'firm tofu'],['cornstarch',25,'cornstarch'],['zero',2.5,'salt'],['garlic_powder',2,'garlic powder'],['oil',5,'canola oil']]],['Sauce',[['soy_sauce',24,'soy sauce'],['honey',14,'honey'],['rice_vinegar',10,'rice vinegar'],['zero',35,'water'],['cornstarch',4,'cornstarch'],['sesame_oil',2,'sesame oil'],['chili_flakes',2.5,'chili flakes']]]],steps:['Press tofu 10–15 minutes and tear into rough pieces.','Toss with cornstarch, salt, garlic powder and oil.','Air fry at 400°F for 12 minutes, shake, then 5–8 minutes more.','Whisk sauce ingredients.','Simmer sauce 30–60 seconds until glossy.','Toss crisp tofu in sauce just before serving.']},
-{id:'seitan',short:"General Tso's Seitan",title:"Spicy General Tso’s Seitan",icon:'🌶️',tone:'#d8a48f',base:1,tag:'chewy + fiery',desc:'Your one-serving tofu-softened seitan, steamed first, crisped, then coated in spicy General Tso’s sauce.',groups:[['Dough',[['vital_wheat_gluten',35,'vital wheat gluten'],['silken_tofu',25,'soft / silken tofu'],['zero',50,'water'],['soy_sauce',5,'soy sauce'],['oil',2,'neutral oil'],['brown_sugar',2,'brown sugar'],['zero',.75,'salt'],['garlic_powder',.5,'garlic powder'],['onion_powder',.5,'onion powder']]],['Coating',[['cornstarch',15,'cornstarch'],['zero',.5,'baking powder']]],['Sauce',[['soy_sauce',12,'soy sauce'],['brown_sugar',8,'brown sugar'],['rice_vinegar',5,'rice vinegar'],['hoisin',15,'hoisin sauce'],['zero',60,'water'],['cornstarch',3,'cornstarch'],['sesame_oil',2,'sesame oil'],['chili_flakes',1,'chili flakes'],['garlic_powder',.5,'garlic powder'],['ginger_powder',.3,'ginger powder'],['ketchup',0,'ketchup (optional)']]]],steps:['Mix wet and dry dough ingredients separately, combine gently and do not knead. Rest 15–20 minutes.','Shape into a thick patty, wrap loosely in foil and steam 25–30 minutes. Cool, then cut.','Coat in cornstarch and baking powder; air fry at 375°F for 10–14 minutes.','Bloom chili flakes briefly, then add sauce ingredients.','Cook sauce 30–60 seconds until glossy.','Toss crisp seitan in sauce and serve.']},
-{id:'pancakes',short:'Cottage Pancakes',title:'Cottage Cheese Pancakes',icon:'🥞',tone:'#e7d09f',base:1,tag:'soft + filling',desc:'One egg, 4% cottage cheese, wheat flour, banana, honey and 2% milk.',groups:[['Batter',[['egg',50,'egg'],['cottage_cheese_4',114,'4% cottage cheese'],['wheat_flour',60,'wheat flour'],['banana',118,'banana'],['honey',9,'honey'],['milk_2',60,'2% milk'],['zero',2,'baking powder'],['oil',0,'oil for pan']]]],steps:['Mash banana, then whisk in egg and honey.','Stir in cottage cheese. Blend first for a smoother texture if desired.','Mix in wheat flour and baking powder.','Add milk gradually until thick but pourable.','Cook in a nonstick pan over medium heat.','Cook 2–3 minutes per side; cover briefly at the end if needed.']},
-{id:'moroccan',short:'Moroccan Tofu',title:'Moroccan Tofu + Sweet Potatoes',icon:'🍠',tone:'#d9a06f',base:4,tag:'warm + spiced',desc:'Roasted tofu and sweet potatoes with cumin, turmeric, cinnamon and smoked paprika, plus lemon-cilantro aioli.',groups:[['Sheet pan',[['sweet_potato',680,'sweet potatoes'],['firm_tofu',425,'extra-firm tofu'],['oil',40,'olive oil'],['cumin',4,'ground cumin'],['turmeric',2,'turmeric'],['cinnamon',2,'cinnamon'],['paprika',2,'smoked paprika'],['zero',6,'salt'],['cayenne',.5,'cayenne']]],['Aioli',[['vegan_mayo',120,'vegan mayo'],['lemon_juice',15,'lemon juice'],['cilantro',15,'cilantro'],['agave',7,'agave'],['paprika',1,'smoked paprika']]]],steps:['Heat oven to 400°F and press tofu 10–15 minutes.','Cut sweet potatoes and toss with two-thirds of the oil and half the spices.','Toss tofu with remaining oil and spices.','Roast 15 minutes, flip, then roast another 10–15 minutes.','Mix aioli ingredients.','Serve roasted tofu and sweet potatoes with aioli.']},
-{id:'japchae',short:'Japchae Fried Rice',title:'Trader Joe’s–Style Japchae Fried Rice',icon:'🍳',tone:'#b8c7a5',base:6,tag:'chewy + savory',desc:'Your 650 g cooked-brown-rice batch with glass noodles and egg. No scallions required.',groups:[['Base',[['brown_rice_cooked',650,'cooked brown rice'],['glass_noodles_dry',120,'dry dangmyeon'],['egg',150,'eggs'],['oil',30,'neutral oil']]],['Vegetables',[['carrot',200,'carrots'],['mushrooms',200,'mushrooms'],['spinach',150,'spinach / napa cabbage'],['onion',0,'onion (optional)']]],['Sauce',[['soy_sauce',90,'soy sauce'],['sesame_oil',27.5,'sesame oil'],['sugar',38,'sugar'],['garlic',18,'garlic'],['rice_vinegar',6.5,'rice vinegar'],['sesame_seeds',7,'sesame seeds']]]],steps:['Boil dangmyeon 6–7 minutes, drain, rinse cold and cut into shorter pieces.','Mix soy sauce, sesame oil, sugar, garlic and rice vinegar.','Scramble eggs softly in part of the oil and remove.','Stir-fry carrots and mushrooms; add optional onion and then spinach.','Add noodles and rice; let sit against the hot pan briefly between tosses.','Add sauce, toss until glossy, fold eggs back in and finish with sesame seeds.']},
-{id:'breakfast',short:'Bagel Breakfast',title:'Bagel, Eggs + Walnuts',icon:'🥯',tone:'#d9c4a8',base:1,tag:'easy breakfast',desc:'Trader Joe’s cinnamon-raisin bagel, one egg, two servings of egg whites and 30 g walnuts.',groups:[['Breakfast',[['tj_raisin_bagel',85,'Trader Joe’s cinnamon-raisin bagel'],['egg',50,'egg'],['egg_white',92,'egg whites'],['walnuts',30,'walnuts']]]],steps:['Toast the cinnamon-raisin bagel.','Whisk the whole egg and egg whites together.','Cook eggs in a nonstick pan over medium-low heat until just set.','Serve with the toasted bagel and walnuts.']]}
-];
-const app=document.getElementById('app'),nav=document.getElementById('nav'),mnav=document.getElementById('mnav'),title=document.getElementById('title'),copy=document.getElementById('copy'),toast=document.getElementById('toast');let active=-1;
-function f(n,d=1){n=Math.round((+n||0)*10**d)/10**d;return Number.isInteger(n)?''+n:n.toFixed(d).replace(/0+$/,'').replace(/\.$/,'')}
-function cover(){return `<section class="cover" id="home"><div class="inner"><h1>Home Cooked.</h1><p>The recipes you actually make, kept in one quiet place. Adjust servings or ingredient grams and the nutrition follows along.</p><div class="stats"><div class="stat"><b>7</b><span>saved recipes</span></div><div class="stat"><b>Live</b><span>calories, protein, carbs, fat and fiber</span></div><div class="stat"><b>Yours</b><span>edit amounts to match what you actually cooked</span></div></div><a class="start" href="#${R[0].id}">Start cooking ↓</a></div></section>`}
-function recipe(r,i){let k=0,ings=r.groups.map(g=>`<li class="group">${g[0]}</li>`+g[1].map(x=>`<li class="ing"><label class="amt"><input inputmode="decimal" data-i="${k++}" data-n="${x[0]}" data-b="${x[1]}" value="${f(x[1],2)}"><span>g</span></label><span>${x[2]}</span></li>`).join('')).join('');return `<section class="recipe" id="${r.id}" data-i="${i}" data-title="${r.title}" data-short="${r.short}" style="--tone:${r.tone}"><div class="inner"><div class="hero"><div><small>${String(i+1).padStart(2,'0')} · ${r.tag}</small><h2>${r.title}</h2><p>${r.desc}</p></div><div class="orb">${r.icon}</div></div><article class="card"><div class="controls"><div class="serving"><div><label>Make this many servings</label></div><div class="step"><button class="minus">−</button><input class="servings" inputmode="decimal" data-b="${r.base}" value="${r.base}"><button class="plus">+</button></div></div><div class="macros"><div class="macrogrid">${['Calories','Protein','Carbs','Fat','Fiber'].map((x,j)=>`<div class="macro" data-m="${j}"><b></b><span>${x} · batch</span><em></em></div>`).join('')}</div></div></div><div class="body"><section class="ingredients"><h3>Ingredients</h3><ul class="list">${ings}</ul><div class="note"><b>Live macros.</b> Change any amount and the nutrition updates with it.</div></section><section class="method"><h3>Method</h3><ol class="steps">${r.steps.map(s=>`<li>${s}</li>`).join('')}</ol><textarea placeholder="What would I change next time?"></textarea></section></div></article></div></section>`}
-app.innerHTML=cover()+R.map(recipe).join('');nav.innerHTML=`<a href="#home" class="active" style="--tone:#e8ded0"><i>⌂</i><span>Home</span></a>`+R.map((r,i)=>`<a href="#${r.id}" data-i="${i}" style="--tone:${r.tone}"><i>${r.icon}</i><span>${r.short}</span></a>`).join('');mnav.innerHTML=`<a href="#home" class="active">⌂ Home</a>`+R.map((r,i)=>`<a href="#${r.id}" data-i="${i}">${r.icon} ${r.short}</a>`).join('');
-function key(s,x){return `hc-${s.id}-${x}`}function totals(s){let t=[0,0,0,0,0];s.querySelectorAll('.ing input').forEach(x=>{let g=Math.max(0,+x.value||0),v=N[x.dataset.n]||N.zero;for(let i=0;i<5;i++)t[i]+=v[i]*g/100});return t}function macros(s){let n=Math.max(.01,+s.querySelector('.servings').value||1),t=totals(s);s.querySelectorAll('.macro').forEach((m,i)=>{m.querySelector('b').textContent=f(t[i],1)+(i?'g':'');m.querySelector('em').textContent=f(t[i]/n,1)+(i?'g':' kcal')+' / serving'})}
-[...document.querySelectorAll('.recipe')].forEach(s=>{let sv=s.querySelector('.servings'),saved=+localStorage.getItem(key(s,'servings'));if(saved>0)sv.value=f(saved,2);sv.dataset.cur=sv.value;s.querySelectorAll('.ing input').forEach(x=>{let z=localStorage.getItem(key(s,'i'+x.dataset.i));if(z!==null)x.value=f(+z,2);x.oninput=()=>{localStorage.setItem(key(s,'i'+x.dataset.i),x.value);macros(s)};x.onfocus=()=>x.select()});function scale(v){let old=Math.max(.01,+sv.dataset.cur||1),next=Math.max(.25,+v||old),q=next/old;s.querySelectorAll('.ing input').forEach(x=>{x.value=f((+x.value||0)*q,2);localStorage.setItem(key(s,'i'+x.dataset.i),x.value)});sv.value=f(next,2);sv.dataset.cur=sv.value;localStorage.setItem(key(s,'servings'),sv.value);macros(s)}s.querySelector('.minus').onclick=()=>scale((+sv.value||1)-.25);s.querySelector('.plus').onclick=()=>scale((+sv.value||1)+.25);sv.onchange=()=>scale(sv.value);let ta=s.querySelector('textarea');ta.value=localStorage.getItem(key(s,'note'))||'';ta.oninput=()=>localStorage.setItem(key(s,'note'),ta.value);macros(s)});
-function setActive(i){active=i;title.textContent=i<0?'Home Cooked':R[i].title;copy.hidden=i<0;document.querySelectorAll('.nav a,.mnav a').forEach(a=>a.classList.remove('active'));if(i<0){document.querySelector('.nav a').classList.add('active');document.querySelector('.mnav a').classList.add('active')}else{document.querySelector(`.nav a[data-i="${i}"]`).classList.add('active');let m=document.querySelector(`.mnav a[data-i="${i}"]`);m.classList.add('active');m.scrollIntoView({inline:'center',block:'nearest'});copy.textContent='Copy '+R[i].short}}
-function detect(){let y=innerHeight*.38,h=document.getElementById('home').getBoundingClientRect();if(h.top<=y&&h.bottom>y)return setActive(-1);let best=0,d=1e9;document.querySelectorAll('.recipe').forEach((s,i)=>{let r=s.getBoundingClientRect(),q=r.top<=y&&r.bottom>y?0:Math.abs(r.top-y);if(q<d){d=q;best=i}});setActive(best)}addEventListener('scroll',detect,{passive:true});addEventListener('resize',detect);requestAnimationFrame(detect);
-copy.onclick=async()=>{let s=document.querySelector(`.recipe[data-i="${active}"]`),serv=s.querySelector('.servings').value,ing=[...s.querySelectorAll('.ing')].map(x=>`• ${f(+x.querySelector('input').value,2)} g ${x.lastElementChild.textContent}`).join('\n'),steps=R[active].steps.map((x,i)=>`${i+1}. ${x}`).join('\n'),t=totals(s),names=['Calories','Protein','Carbs','Fat','Fiber'],ms=names.map((n,i)=>`${n}: ${f(t[i],1)}${i?' g':' kcal'} batch · ${f(t[i]/serv,1)}${i?' g':' kcal'} / serving`).join('\n'),txt=`${R[active].title}\nServings: ${serv}\n\nINGREDIENTS\n${ing}\n\nMETHOD\n${steps}\n\nMACROS\n${ms}`;try{await navigator.clipboard.writeText(txt);toast.textContent=R[active].short+' copied';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1200)}catch(e){alert(txt)}};
-if('serviceWorker'in navigator)addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-</script></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f6f1e8">
+<title>Home Cooked</title>
+<style>
+:root {
+  --paper:#f6f1e8; --card:#fffdf8; --ink:#28251f; --muted:#7d7569;
+  --line:rgba(40,37,31,.11); --deep:#302d27; --shadow:0 24px 74px rgba(48,39,27,.09);
+  --rail:196px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{
+  margin:0;min-height:100%;overflow-x:hidden;background:var(--paper);color:var(--ink);
+  font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  -webkit-text-size-adjust:100%;
+}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+::selection{background:#ddc7b9}
+.grain{
+  position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.10;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
+}
+
+.topbar{
+  position:sticky;top:0;z-index:60;height:68px;display:flex;align-items:center;justify-content:space-between;
+  gap:14px;padding:0 28px 0 calc(var(--rail) + 48px);border-bottom:1px solid var(--line);
+  background:rgba(246,241,232,.84);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+}
+.current{min-width:0}
+.current .tiny{font-size:8px;text-transform:uppercase;letter-spacing:.14em;font-weight:850;color:#968d80;margin-bottom:3px}
+.current b{display:block;font:500 16px/1.1 Georgia,serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.actions{display:flex;gap:7px;align-items:center}
+.action{
+  border:1px solid var(--line);background:rgba(255,253,248,.9);border-radius:999px;padding:9px 12px;
+  font-size:9.5px;font-weight:800;box-shadow:0 6px 18px rgba(48,39,27,.035)
+}
+.action[hidden]{display:none}
+.mobile-nav{display:none}
+
+.sidebar{
+  position:fixed;z-index:55;left:18px;top:88px;width:var(--rail);max-height:calc(100vh - 110px);
+  padding:10px;border:1px solid var(--line);border-radius:22px;background:rgba(255,253,248,.72);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 18px 55px rgba(48,39,27,.08);
+}
+.brand{display:flex;align-items:center;gap:9px;padding:2px 5px 11px}
+.brand-mark{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;background:var(--deep);color:#fff;font-size:13px}
+.brand b{font:500 15px/1 Georgia,serif}
+.nav-list{display:flex;flex-direction:column;gap:3px;overflow:auto;max-height:calc(100vh - 170px);scrollbar-width:none}
+.nav-list::-webkit-scrollbar{display:none}
+.nav-item{
+  display:grid;grid-template-columns:33px minmax(0,1fr);gap:8px;align-items:center;padding:7px;border-radius:13px;
+  transition:.16s ease;
+}
+.nav-item:hover{background:rgba(255,255,255,.6)}
+.nav-item.active{background:#fff;box-shadow:0 7px 22px rgba(48,39,27,.07)}
+.nav-icon{width:33px;height:33px;border-radius:10px;display:grid;place-items:center;background:var(--tone);font-size:17px}
+.nav-item strong{display:block;font:500 11.5px/1.12 Georgia,serif}
+.nav-item small{display:block;font-size:8px;color:var(--muted);margin-top:3px}
+
+.cover,.recipe-section{scroll-margin-top:68px}
+.cover{
+  min-height:calc(100svh - 68px);display:grid;align-items:center;position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 82% 18%,rgba(202,181,151,.27),transparent 29%),
+    radial-gradient(circle at 18% 82%,rgba(167,183,146,.19),transparent 27%),var(--paper);
+}
+.cover-inner,.section-inner{
+  width:min(1080px,calc(100% - var(--rail) - 120px));margin-left:calc(var(--rail) + 54px);margin-right:48px;
+}
+.cover-inner{padding:82px 0 96px}
+.cover-kicker{font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:850;color:#8e8579;margin-bottom:18px}
+.cover h1{font:500 clamp(74px,9vw,126px)/.82 Georgia,serif;letter-spacing:-.07em;margin:0;max-width:7ch}
+.cover-lede{max-width:570px;margin:27px 0 32px;color:var(--muted);font-size:14px;line-height:1.7}
+.cover-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:710px}
+.cover-card{border:1px solid var(--line);background:rgba(255,253,248,.65);border-radius:18px;padding:16px;backdrop-filter:blur(14px)}
+.cover-card b{display:block;font:500 23px/1 Georgia,serif}
+.cover-card span{display:block;color:var(--muted);font-size:9px;line-height:1.45;margin-top:6px}
+.cover-start{display:inline-flex;margin-top:25px;border:0;background:var(--deep);color:#fff;border-radius:999px;padding:12px 17px;font-size:10px;font-weight:850}
+
+.recipe-section{
+  --tone:#d7c8b1;min-height:100svh;padding:80px 0 88px;border-top:1px solid rgba(40,37,31,.055);
+  background:
+    radial-gradient(circle at 94% 2%,color-mix(in srgb,var(--tone) 30%,transparent),transparent 27%),
+    linear-gradient(180deg,color-mix(in srgb,var(--tone) 12%,var(--paper)) 0,var(--paper) 410px);
+}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 138px;gap:34px;align-items:end;margin-bottom:25px}
+.chapter{font-size:8.5px;letter-spacing:.15em;text-transform:uppercase;font-weight:850;color:#82796d;margin-bottom:11px}
+.hero h1{font:500 clamp(50px,5.5vw,78px)/.93 Georgia,serif;letter-spacing:-.052em;margin:0;max-width:10.5ch}
+.hero p{max-width:600px;color:var(--muted);font-size:12.5px;line-height:1.63;margin:14px 0 0}
+.orb{width:138px;height:138px;border-radius:38px;display:grid;place-items:center;background:var(--tone);font-size:64px;box-shadow:0 25px 66px color-mix(in srgb,var(--tone) 44%,transparent);transform:rotate(3deg)}
+
+.recipe-card{background:rgba(255,253,248,.92);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);overflow:hidden}
+.recipe-controls{display:grid;grid-template-columns:310px 1fr;border-bottom:1px solid var(--line)}
+.serving-zone{padding:18px 21px;border-right:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.eyebrow{font-size:8px;text-transform:uppercase;letter-spacing:.13em;font-weight:850;color:#948b7f}
+.small-note{font-size:8.5px;color:var(--muted);margin-top:4px}
+.stepper{display:flex;align-items:center;gap:5px}
+.stepper button{width:31px;height:31px;border:1px solid var(--line);border-radius:50%;background:#fff;font-size:15px;padding:0}
+.servings{width:48px;height:31px;border:0;border-radius:8px;background:transparent;text-align:center;outline:0;font-size:11.5px;font-weight:850}
+.servings:focus{background:#fff;box-shadow:0 0 0 1px var(--line)}
+.macro-zone{padding:11px 14px 12px}
+.macro-title{display:flex;justify-content:space-between;padding:0 7px 8px;color:#8a8175;font-size:8px;text-transform:uppercase;letter-spacing:.12em;font-weight:850}
+.macro-grid{display:grid;grid-template-columns:repeat(5,1fr)}
+.macro{padding:7px 11px;border-right:1px solid var(--line);min-width:0}
+.macro:last-child{border:0}
+.macro strong{font:500 19px/1 Georgia,serif;font-variant-numeric:tabular-nums}
+.macro span{display:block;margin-top:5px;color:var(--muted);font-size:7px;text-transform:uppercase;letter-spacing:.08em;font-weight:800}
+.macro small{display:block;margin-top:3px;color:#a49b8e;font-size:8px}
+.macro small .macro-per{display:inline;margin:0;color:inherit;font-size:inherit;text-transform:none;letter-spacing:0;font-weight:inherit}
+
+.body-grid{display:grid;grid-template-columns:.94fr 1.06fr}
+.ingredients{padding:26px 28px 31px;border-right:1px solid var(--line)}
+.method{padding:26px 31px 31px}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-bottom:13px}
+.section-head h2{font:500 21px/1 Georgia,serif;margin:0}
+.section-head small{color:#a19789;font-size:7.5px;text-transform:uppercase;letter-spacing:.09em;font-weight:800}
+.ingredient-list{list-style:none;margin:0;padding:0}
+.group{margin-top:14px;padding:9px 0 5px;font-size:8px;letter-spacing:.14em;text-transform:uppercase;font-weight:850;color:#968c80}
+.ingredient{display:grid;grid-template-columns:77px minmax(0,1fr);gap:11px;align-items:center;border-bottom:1px solid rgba(40,37,31,.065);padding:8px 0;min-height:40px}
+.amount{display:inline-flex;align-items:baseline;gap:3px;justify-self:start;border-radius:8px;padding:4px 4px;transition:.14s}
+.amount:hover{background:rgba(40,37,31,.04)}
+.amount:focus-within{background:#fff;box-shadow:0 0 0 1px var(--line),0 4px 14px rgba(48,39,27,.04)}
+.gram-input{width:51px;border:0;background:transparent;text-align:right;outline:0;padding:0;font-size:10.8px;font-weight:850;font-variant-numeric:tabular-nums}
+.amount>span{font-size:8px;color:#998f82}
+.ingredient-name{min-width:0;font-size:10.5px;line-height:1.35;color:#575148}
+.ingredient-name em{display:block;font-size:8px;color:#a09689;font-style:normal;margin-top:2px}
+.steps{list-style:none;margin:0;padding:0;counter-reset:step}
+.steps li{counter-increment:step;display:grid;grid-template-columns:29px minmax(0,1fr);gap:10px;margin-bottom:12px;color:#504b43;font-size:10.8px;line-height:1.55}
+.steps li:before{content:counter(step);width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--tone) 34%,#fff);font-size:8.5px;font-weight:850}
+.tip,.nutrition-note{margin-top:16px;padding:12px 13px;border-radius:13px;font-size:9.2px;line-height:1.52;color:#615a51;border:1px solid color-mix(in srgb,var(--tone) 28%,transparent);background:color-mix(in srgb,var(--tone) 13%,#fff)}
+.nutrition-note{background:#f4f0e8;border-color:var(--line)}
+.tip b,.nutrition-note b{color:#39352f}
+.notes{margin-top:17px}
+.notes label{display:flex;justify-content:space-between;font:500 14px/1 Georgia,serif;margin-bottom:8px}
+.notes label small{font:750 7px/1 Inter,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:#aaa}
+.notes textarea{width:100%;min-height:66px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:10px;resize:vertical;outline:0;font-size:10px}
+
+.noscript{margin:0;padding:9px 12px;background:#fff3d9;text-align:center;font-size:10px;color:#69542f}
+
+@media(max-width:1000px){
+  :root{--rail:170px}
+  .topbar{padding-left:calc(var(--rail) + 40px)}
+  .sidebar{width:var(--rail);left:12px}
+  .cover-inner,.section-inner{width:calc(100% - var(--rail) - 84px);margin-left:calc(var(--rail) + 38px);margin-right:26px}
+  .recipe-controls{grid-template-columns:276px 1fr}
+  .macro strong{font-size:17px}
+}
+
+@media(max-width:760px){
+  html{scroll-padding-top:106px}
+  .sidebar{display:none}
+  .topbar{
+    height:56px;padding:0 max(12px,env(safe-area-inset-right)) 0 max(12px,env(safe-area-inset-left));
+  }
+  .current .tiny{display:none}
+  .current b{font-size:14px;max-width:48vw}
+  .action{min-height:34px;padding:8px 10px;font-size:8.5px}
+  #resetBtn{display:none!important}
+  .mobile-nav{
+    position:sticky;top:56px;z-index:58;display:flex;gap:6px;overflow-x:auto;
+    padding:6px max(10px,env(safe-area-inset-right)) 7px max(10px,env(safe-area-inset-left));
+    border-bottom:1px solid var(--line);background:rgba(246,241,232,.9);
+    backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+    scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;
+  }
+  .mobile-nav::-webkit-scrollbar{display:none}
+  .mobile-chip{
+    flex:none;scroll-snap-align:center;border:1px solid var(--line);background:rgba(255,253,248,.78);
+    border-radius:999px;padding:8px 11px;font-size:8.8px;font-weight:800;white-space:nowrap;
+  }
+  .mobile-chip.active{background:var(--deep);border-color:var(--deep);color:#fff}
+
+  .cover,.recipe-section{scroll-margin-top:106px}
+  .cover{min-height:calc(100svh - 106px);align-items:start}
+  .cover-inner,.section-inner{width:100%;margin:0}
+  .cover-inner{padding:56px 20px 52px}
+  .cover-kicker{font-size:8px;margin-bottom:13px}
+  .cover h1{font-size:clamp(58px,19vw,76px);line-height:.86}
+  .cover-lede{font-size:12px;line-height:1.62;margin:21px 0 24px}
+  .cover-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .cover-card{padding:13px;border-radius:15px;min-height:88px}
+  .cover-card:last-child{grid-column:1/-1;min-height:auto}
+  .cover-card b{font-size:20px}
+  .cover-start{width:100%;justify-content:center;min-height:44px;margin-top:18px}
+
+  .recipe-section{min-height:0;padding:31px 12px 48px}
+  .hero{grid-template-columns:1fr;position:relative;gap:0;padding:0 5px;margin-bottom:17px}
+  .chapter{font-size:8px;margin-bottom:8px}
+  .hero h1{font-size:clamp(38px,11.5vw,47px);max-width:8.3ch;padding-right:61px;line-height:.94}
+  .hero p{font-size:11px;line-height:1.55;padding-right:2px;margin-top:10px}
+  .orb{position:absolute;right:4px;top:4px;width:55px;height:55px;border-radius:17px;font-size:29px;box-shadow:0 14px 32px color-mix(in srgb,var(--tone) 38%,transparent)}
+
+  .recipe-card{border-radius:20px;box-shadow:0 15px 44px rgba(48,39,27,.07)}
+  .recipe-controls{display:block}
+  .serving-zone{border-right:0;border-bottom:1px solid var(--line);padding:14px 15px}
+  .stepper button{width:34px;height:34px;font-size:16px}
+  .servings{height:34px;width:47px;font-size:12px}
+  .macro-zone{padding:11px 12px 13px}
+  .macro-title{padding:0 3px 8px}
+  .macro-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  .macro{border:1px solid var(--line)!important;border-radius:12px;padding:9px 10px;background:rgba(255,255,255,.55)}
+  .macro:first-child{grid-column:1/-1}
+  .macro strong{font-size:18px}
+
+  .body-grid{display:block}
+  .ingredients{border-right:0;border-bottom:1px solid var(--line);padding:21px 15px 24px}
+  .method{padding:21px 15px 26px}
+  .section-head h2{font-size:20px}
+  .ingredient{grid-template-columns:70px minmax(0,1fr);gap:8px;padding:8px 0}
+  .amount{padding:5px 2px}
+  .gram-input{width:47px;font-size:11px}
+  .ingredient-name{font-size:11px;overflow-wrap:anywhere}
+  .steps li{font-size:11px;line-height:1.5}
+  .notes textarea{min-height:80px;font-size:11px}
+}
+
+@media(max-width:370px){
+  .current b{max-width:42vw;font-size:13px}
+  .action{padding-inline:8px}
+  .cover-grid{grid-template-columns:1fr}
+  .cover-card:last-child{grid-column:auto}
+  .hero h1{font-size:38px;padding-right:55px}
+  .orb{width:49px;height:49px;font-size:25px}
+  .ingredient{grid-template-columns:65px minmax(0,1fr)}
+  .gram-input{width:43px}
+}
+</style>
+
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Home Cooked">
+<meta name="mobile-web-app-capable" content="yes">
+
+</head>
+<body>
+<div class="grain"></div>
+
+<aside class="sidebar" aria-label="Recipe navigation">
+  <div class="brand"><div class="brand-mark">⌂</div><b>Home Cooked</b></div>
+  <nav class="nav-list">
+    <a class="nav-item home-link active" href="#home" style="--tone:#e8ded0"><span class="nav-icon">⌂</span><span><strong>Home</strong><small>cover</small></span></a>
+    <a class="nav-item" href="#lettuce" data-index="0" style="--tone:#c9d5b0"><span class="nav-icon">🥬</span><span><strong>Lettuce Wraps</strong><small>2 servings</small></span></a><a class="nav-item" href="#airtofu" data-index="1" style="--tone:#e2c3a0"><span class="nav-icon">◻️</span><span><strong>Air-Fryer Tofu</strong><small>1 serving</small></span></a><a class="nav-item" href="#seitan" data-index="2" style="--tone:#d8a48f"><span class="nav-icon">🌶️</span><span><strong>General Tso&#x27;s Seitan</strong><small>1 serving</small></span></a><a class="nav-item" href="#pancakes" data-index="3" style="--tone:#e7d09f"><span class="nav-icon">🥞</span><span><strong>Cottage Pancakes</strong><small>1 serving</small></span></a><a class="nav-item" href="#moroccan" data-index="4" style="--tone:#d9a06f"><span class="nav-icon">🍠</span><span><strong>Moroccan Tofu</strong><small>4 servings</small></span></a><a class="nav-item" href="#japchae" data-index="5" style="--tone:#b8c7a5"><span class="nav-icon">🍳</span><span><strong>Japchae Fried Rice</strong><small>6 servings</small></span></a><a class="nav-item" href="#breakfast" data-index="6" style="--tone:#d9c4a8"><span class="nav-icon">🥯</span><span><strong>Bagel Breakfast</strong><small>1 serving</small></span></a>
+  </nav>
+</aside>
+
+<header class="topbar">
+  <div class="current"><div class="tiny">Now cooking</div><b id="currentTitle">Home Cooked</b></div>
+  <div class="actions">
+    <button class="action" id="resetBtn" type="button" hidden>Reset recipe</button>
+    <button class="action" id="copyBtn" type="button" hidden>Copy recipe</button>
+  </div>
+</header>
+
+<nav class="mobile-nav" aria-label="Recipe navigation">
+  <a class="mobile-chip home-chip active" href="#home">⌂ Home</a>
+  <a class="mobile-chip" href="#lettuce" data-index="0">🥬 Lettuce Wraps</a><a class="mobile-chip" href="#airtofu" data-index="1">◻️ Air-Fryer Tofu</a><a class="mobile-chip" href="#seitan" data-index="2">🌶️ General Tso&#x27;s Seitan</a><a class="mobile-chip" href="#pancakes" data-index="3">🥞 Cottage Pancakes</a><a class="mobile-chip" href="#moroccan" data-index="4">🍠 Moroccan Tofu</a><a class="mobile-chip" href="#japchae" data-index="5">🍳 Japchae Fried Rice</a><a class="mobile-chip" href="#breakfast" data-index="6">🥯 Bagel Breakfast</a>
+</nav>
+
+<noscript><div class="noscript">The full cookbook still works without JavaScript. Live macro recalculation, saved edits, and Copy Recipe require JavaScript.</div></noscript>
+
+<main>
+<section class="cover" id="home">
+  <div class="cover-inner">
+    <div class="cover-kicker">A personal cooking notebook</div>
+    <h1>Home Cooked.</h1>
+    <p class="cover-lede">The recipes you actually make, kept in one quiet place. Adjust a serving, change an ingredient, or use the exact grams you cooked with — the nutrition follows along automatically.</p>
+    <div class="cover-grid">
+      <div class="cover-card"><b>7</b><span>saved recipes, from breakfast to crispy tofu.</span></div>
+      <div class="cover-card"><b>Live</b><span>calories, protein, carbs, fat and fiber as you edit.</span></div>
+      <div class="cover-card"><b>Yours</b><span>change servings and ingredient amounts to match what you actually cooked.</span></div>
+    </div>
+    <a class="cover-start" href="#lettuce">Start cooking ↓</a>
+  </div>
+</section>
+
+<section class="recipe-section" id="lettuce" data-index="0" data-title="Tofu Lettuce Wraps" data-short="Lettuce Wraps" style="--tone:#c9d5b0">
+  <div class="section-inner">
+    <div class="hero">
+      <div class="hero-copy">
+        <div class="chapter">01 · fresh + saucy</div>
+        <h1>Tofu Lettuce Wraps</h1>
+        <p>Crisp tofu, crunchy water chestnuts and a peanut-hoisin sauce tucked into cold lettuce cups. This is your 2 g cooking-oil version.</p>
+      </div>
+      <div class="orb" aria-hidden="true">🥬</div>
+    </div>
+
+    <article class="recipe-card">
+      <div class="recipe-controls">
+        <div class="serving-zone">
+          <div>
+            <div class="eyebrow">Make this many servings</div>
+            <div class="small-note">Original recipe: 2 servings</div>
+          </div>
+          <div class="stepper">
+            <button class="minus" type="button" aria-label="Decrease servings">−</button>
+            <input class="servings" type="text" inputmode="decimal" data-base="2" value="2" aria-label="Servings">
+            <button class="plus" type="button" aria-label="Increase servings">+</button>
+          </div>
+        </div>
+
+        <div class="macro-zone">
+          <div class="macro-title"><span>Live macros</span><span>batch · per serving</span></div>
+          <div class="macro-grid"><div class="macro" data-macro="0"><strong class="macro-batch">736.9</strong><span>Calories · batch</span><small><span class="macro-per">368.4</span>kcal / serving</small></div><div class="macro" data-macro="1"><strong class="macro-batch">47.5g</strong><span>Protein · batch</span><small><span class="macro-per">23.8</span>g / serving</small></div><div class="macro" data-macro="2"><strong class="macro-batch">61.2g</strong><span>Carbs · batch</span><small><span class="macro-per">30.6</span>g / serving</small></div><div class="macro" data-macro="3"><strong class="macro-batch">39.5g</strong><span>Fat · batch</span><small><span class="macro-per">19.8</span>g / serving</small></div><div class="macro" data-macro="4"><strong class="macro-batch">14.3g</strong><span>Fiber · batch</span><small><span class="macro-per">7.1</span>g / serving</small></div></div>
+        </div>
+      </div>
+
+      <div class="body-grid">
+        <section class="ingredients">
+          <div class="section-head"><h2>Ingredients</h2><small>tap an amount to edit</small></div>
+          <ul class="ingredient-list"><li class="ingredient"><label class="amount" aria-label="dried shiitake mushrooms amount in grams"><input class="gram-input" type="text" inputmode="decimal" data-index="0" data-nutri="dried_shiitake" data-base="8" value="8" autocomplete="off"><span>g</span></label><div class="ingredient-name">dried shiitake mushrooms</div></li><li class="ingredient"><label class="amount" aria-label="firm tofu amount in grams"><input class="gram-input" type="text" inputmode="decimal" data-index="1" data-nutri="firm_tofu" data-base="200" value="200" autocomplete="off"><span>g</span></label><div class="ingredient-name">firm tofu</div></li><li class="ingredient"><label class="amount" aria-label="peanut or canola oil amount in grams"><input class="gram-input" type="text" inputmode="decimal" data-index="2" data-nutri="oil" data-base="2" value="2" autocomplete="off"><span>g</span></label><div class="ingredient-name">peanut or canola oil</div></li><li class="ingredient"><label class="amount" aria-label="water chestnuts, drained amount in grams"><input class="gram-input" type="text" inputmode="decimal" data-index="3" data-nutri="water_chestnuts" data-base="113" value="113" autocomplete="off"><span>g</span></label><div class="ingredient-name">water chestnuts, drained</div></li><li class="ingredient"><label class="amount" aria-label="green onion amount in grams"><input class="gram-input" type="text" inputmode="decimal" data-index="4" data-nutri="green_onion" data-base="15" value="15" autocomplete="off"><span>g</span></label><div class="ingredient-name">green onion</div></li><li class="ingredient"><label class="amount" aria-label="iceberg lettuce amount in grams"><input class="gram-input" type="text" inputmode="decimal" data-index="5" data-nutri="iceberg" data-base="275" value="275" autocomplete="off"><span>g</span></label><div class="ingredient-name">iceberg lettuce<em>approx. 250–300 g in the original half-batch</em></div></li><li class="ingredient"><label class="amount" aria-label="roasted peanuts, crushed amount in grams"><input class="gram-input" type="text" inputmode="decimal" data-index="6" data-nutri="peanuts" data-base="18" value="18" autocomplete="off"><span>g</span></label><div class="ingredient-name">roasted peanuts, crushed</div></li><li class="group">Sauce</li><li class="ingredient"><label class="amount" aria-label="hoisin sauce amount in grams"><input class="gram-input" type="text" inputmode="decimal" data-index="7" data-nutri="hoisin" data-base="32" value="32" autocomplete="off"><span>g</span></label><div class="ingredient-name">hoisin sauce</div></li><li class="ingredient"><label class="amount" aria-label="natural peanut butter amount in grams"><input class="gram-input" type="text" inputmode="decimal" data-index="8" data-nutri="peanut_butter" data-base="16" value="16" autocomplete="off"><span>g</span></label><div class="ingredient-name">natural peanut butter</div></li><li class="ingredient"><label class="amount" aria-label="rice vinegar amount in grams"><input class="gram-input" type="text" inputmode="decimal" data-index="9" data-nutri="rice_vinegar" data-base="7.5" value="7.5" autocomplete="off"><span>g</span></label><div class="ingredient-name">rice vinegar</div></li><li class="ingredient"><label class="amount" aria-label="sriracha / chili-garlic sauce amount in grams"><input class="gram-input" type="text" inputmode="decimal" data-index="10" data-nutri="sriracha" data-base="8" value="8" autocomplete="off"><span>g</span></label><div class="ingredient-name">sriracha / chili-garlic sauce</div></li><li class="ingredient"><label class="amount" aria-label="sugar amount in grams"><input class="gram-input" type="text" inputmode="decimal" data-index="11" data-nutri="sugar" data-base="2" value="2" autocomplete="off"><span>g</span></label><div class="ingredient-name">sugar</div></li><li class="ingredient"><label class="amount" aria-label="soy sauce amount in grams"><input class="gram-input" type="text" inputmode="decimal" data-index="12" data-nutri="soy_sauce" data-base="2.5" value="2.5" autocomplete="off"><span>g</span></label><div class="ingredient-name">soy sauce</div></li><li class="ingredient"><label class="amount" aria-label="sesame oil amount in grams"><input class="gram-input" type="text" inputmode="decimal" data-index="13" data-nutri="sesame_oil" data-base="2.3" value="2.3" autocomplete="off"><span>g</span></label><div class="ingredient-name">sesame oil</div></li><li class="ingredient"><label class="amount" aria-label="garlic, grated amount in grams"><input class="gram-input" type="text" inputmode="decimal" data-index="14" data-nutri="garlic" data-base="1.5" value="1.5" autocomplete="off"><span>g</span></label><div class="ingredient-name">garlic, grated</div></li><li class="ingredient"><label class="amount" aria-label="ginger, grated amount in grams"><input class="gram-input" type="text" inputmode="decimal" data-index="15" data-nutri="ginger" data-base="2.5" value="2.5" autocomplete="off"><span>g</span></label><div class="ingredient-name">ginger, grated</div></li><li class="ingredient"><label class="amount" aria-label="water, to thin finishing sauce amount in grams"><input class="gram-input" type="text" inputmode="decimal" data-index="16" data-nutri="zero" data-base="15" value="15" autocomplete="off"><span>g</span></label><div class="ingredient-name">water, to thin finishing sauce</div></li></ul>
+          <div class="nutrition-note"><b>Live macros.</b> Change any ingredient amount and the nutrition updates with it. Different brands can vary slightly.</div>
+        </section>
+
+        <section class="method">
+          <div class="section-head"><h2>Method</h2><small>6 steps</small></div>
+          <ol class="steps"><li>Soak the shiitakes in hot water for about 15 minutes. Squeeze dry and mince finely.</li><li>Mix hoisin, peanut butter, rice vinegar, chili sauce, sugar, soy sauce, sesame oil, garlic and ginger. Keep the finishing water aside.</li><li>Cut tofu into very small cubes. Heat the cooking oil in a good nonstick pan and brown the tofu, letting it sit before tossing so it develops crisp edges.</li><li>Add mushrooms, water chestnuts and the pale part of the green onion. Cook about 1 minute.</li><li>Add half the sauce and toss for about 30 seconds. Stir in the green onion greens.</li><li>Thin the remaining sauce with the finishing water. Spoon the filling into cold lettuce leaves, finish with peanuts and drizzle with sauce.</li></ol>
+          <div class="tip"><b>Kitchen note:</b> Fat is now calculated from the actual ingredients. The peanuts + peanut butter + tofu + sesame oil make this substantially higher-fat than the old inherited estimate.</div>
+          <div class="notes"><label>My notes <small>saved on this device</small></label><textarea placeholder="What would I change next time?"></textarea></div>
+        </section>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="recipe-section" id="airtofu" data-index="1" data-title="Air-Fryer Saucy Tofu" data-short="Air-Fryer Tofu" style="--tone:#e2c3a0">
+  <div class="section-inner">
+    <div class="hero"><div class="hero-copy"><div class="chapter">02 · crispy + airy</div><h1>Air-Fryer Saucy Tofu</h1><p>Torn edges, a light cornstarch shell, minimal oil, then a glossy spicy-sweet sauce added at the very end.</p></div><div class="orb" aria-hidden="true">◻️</div></div>
+    <article class="recipe-card"><div class="recipe-controls"><div class="serving-zone"><div><div class="eyebrow">Make this many servings</div><div class="small-note">Original recipe: 1 serving</div></div><div class="stepper"><button class="minus" type="button" aria-label="Decrease servings">−</button><input class="servings" type="text" inputmode="decimal" data-base="1" value="1" aria-label="Servings"><button class="plus" type="button" aria-label="Increase servings">+</button></div></div><div class="macro-zone"><div class="macro-title"><span>Live macros</span><span>batch · per serving</span></div><div class="macro-grid"><div class="macro" data-macro="0"><strong class="macro-batch">820</strong><span>Calories · batch</span><small><span class="macro-per">820</span>kcal / serving</small></div><div class="macro" data-macro="1"><strong class="macro-batch">71.8g</strong><span>Protein · batch</span><small><span class="macro-per">71.8</span>g / serving</small></div><div class="macro" data-macro="2"><strong class="macro-batch">53.2g</strong><span>Carbs · batch</span><small><span class="macro-per">53.2</span>g / serving</small></div><div class="macro" data-macro="3"><strong class="macro-batch">42.5g</strong><span>Fat · batch</span><small><span class="macro-per">42.5</span>g / serving</small></div><div class="macro" data-macro="4"><strong class="macro-batch">12.1g</strong><span>Fiber · batch</span><small><span class="macro-per">12.1</span>g / serving</small></div></div></div></div><div class="body-grid"><section class="ingredients"><div class="section-head"><h2>Ingredients</h2><small>tap an amount to edit</small></div><ul class="ingredient-list"><li class="group">Tofu</li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="0" data-nutri="firm_tofu" data-base="400" value="400"><span>g</span></label><div class="ingredient-name">firm tofu, pressed</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="1" data-nutri="cornstarch" data-base="25" value="25"><span>g</span></label><div class="ingredient-name">cornstarch</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="2" data-nutri="zero" data-base="2.5" value="2.5"><span>g</span></label><div class="ingredient-name">salt</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="3" data-nutri="garlic_powder" data-base="2" value="2"><span>g</span></label><div class="ingredient-name">garlic powder</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="4" data-nutri="oil" data-base="5" value="5"><span>g</span></label><div class="ingredient-name">canola oil</div></li><li class="group">Sauce</li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="5" data-nutri="soy_sauce" data-base="24" value="24"><span>g</span></label><div class="ingredient-name">soy sauce</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="6" data-nutri="honey" data-base="14" value="14"><span>g</span></label><div class="ingredient-name">honey<em>swap for brown sugar if preferred</em></div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="7" data-nutri="rice_vinegar" data-base="10" value="10"><span>g</span></label><div class="ingredient-name">rice vinegar</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="8" data-nutri="zero" data-base="35" value="35"><span>g</span></label><div class="ingredient-name">water</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="9" data-nutri="cornstarch" data-base="4" value="4"><span>g</span></label><div class="ingredient-name">cornstarch</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="10" data-nutri="sesame_oil" data-base="2" value="2"><span>g</span></label><div class="ingredient-name">sesame oil</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="11" data-nutri="chili_flakes" data-base="2.5" value="2.5"><span>g</span></label><div class="ingredient-name">chili flakes</div></li></ul><div class="nutrition-note"><b>Live macros.</b> Change any ingredient amount and the nutrition updates with it. Different brands can vary slightly.</div></section><section class="method"><div class="section-head"><h2>Method</h2><small>6 steps</small></div><ol class="steps"><li>Press the tofu for 10–15 minutes. Tear into rough 3–4 cm pieces rather than neat cubes for more craggy surface area.</li><li>Toss with cornstarch, salt, garlic powder and oil until every piece is lightly dusted.</li><li>Air fry at 205°C / 400°F for 12 minutes. Shake, then cook another 5–8 minutes until deeply crisp.</li><li>Whisk the sauce ingredients together.</li><li>Simmer the sauce in a pan for 30–60 seconds, just until glossy and thick enough to cling.</li><li>Turn off the heat, add the crisp tofu and toss briefly. Serve immediately so the crust stays crisp.</li></ol><div class="tip"><b>Kitchen note:</b> Sauce only after the tofu is fully crisp. Torn edges + a dry starch coating are what give this version its airy-crunchy shell.</div><div class="notes"><label>My notes <small>saved on this device</small></label><textarea placeholder="What would I change next time?"></textarea></div></section></div></article>
+  </div>
+</section>
+
+<section class="recipe-section" id="seitan" data-index="2" data-title="Spicy General Tso’s Seitan" data-short="General Tso's Seitan" style="--tone:#d8a48f">
+  <div class="section-inner">
+    <div class="hero"><div class="hero-copy"><div class="chapter">03 · chewy + fiery</div><h1>Spicy General Tso’s Seitan</h1><p>Your exact one-serving tofu-softened seitan recipe, steamed first, crisped, then hit with a spicy General Tso’s sauce.</p></div><div class="orb" aria-hidden="true">🌶️</div></div>
+    <article class="recipe-card"><div class="recipe-controls"><div class="serving-zone"><div><div class="eyebrow">Make this many servings</div><div class="small-note">Original recipe: 1 serving</div></div><div class="stepper"><button class="minus" type="button">−</button><input class="servings" type="text" inputmode="decimal" data-base="1" value="1"><button class="plus" type="button">+</button></div></div><div class="macro-zone"><div class="macro-title"><span>Live macros</span><span>batch · per serving</span></div><div class="macro-grid"><div class="macro" data-macro="0"><strong class="macro-batch">346.6</strong><span>Calories · batch</span><small><span class="macro-per">346.6</span>kcal / serving</small></div><div class="macro" data-macro="1"><strong class="macro-batch">30.4g</strong><span>Protein · batch</span><small><span class="macro-per">30.4</span>g / serving</small></div><div class="macro" data-macro="2"><strong class="macro-batch">41g</strong><span>Carbs · batch</span><small><span class="macro-per">41</span>g / serving</small></div><div class="macro" data-macro="3"><strong class="macro-batch">6.1g</strong><span>Fat · batch</span><small><span class="macro-per">6.1</span>g / serving</small></div><div class="macro" data-macro="4"><strong class="macro-batch">2.8g</strong><span>Fiber · batch</span><small><span class="macro-per">2.8</span>g / serving</small></div></div></div></div><div class="body-grid"><section class="ingredients"><div class="section-head"><h2>Ingredients</h2><small>tap an amount to edit</small></div><ul class="ingredient-list"><li class="group">Seitan dough</li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="0" data-nutri="vital_wheat_gluten" data-base="35" value="35"><span>g</span></label><div class="ingredient-name">vital wheat gluten</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="1" data-nutri="silken_tofu" data-base="25" value="25"><span>g</span></label><div class="ingredient-name">soft / silken tofu</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="2" data-nutri="zero" data-base="50" value="50"><span>g</span></label><div class="ingredient-name">water</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="3" data-nutri="soy_sauce" data-base="5" value="5"><span>g</span></label><div class="ingredient-name">soy sauce</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="4" data-nutri="oil" data-base="2" value="2"><span>g</span></label><div class="ingredient-name">neutral oil</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="5" data-nutri="brown_sugar" data-base="2" value="2"><span>g</span></label><div class="ingredient-name">brown sugar</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="6" data-nutri="zero" data-base="0.75" value="0.75"><span>g</span></label><div class="ingredient-name">salt</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="7" data-nutri="garlic_powder" data-base="0.5" value="0.5"><span>g</span></label><div class="ingredient-name">garlic powder</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="8" data-nutri="onion_powder" data-base="0.5" value="0.5"><span>g</span></label><div class="ingredient-name">onion powder</div></li><li class="group">Coating</li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="9" data-nutri="cornstarch" data-base="15" value="15"><span>g</span></label><div class="ingredient-name">cornstarch</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="10" data-nutri="zero" data-base="0.5" value="0.5"><span>g</span></label><div class="ingredient-name">baking powder<em>optional</em></div></li><li class="group">Spicy General Tso’s sauce</li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="11" data-nutri="soy_sauce" data-base="12" value="12"><span>g</span></label><div class="ingredient-name">soy sauce</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="12" data-nutri="brown_sugar" data-base="8" value="8"><span>g</span></label><div class="ingredient-name">brown sugar</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="13" data-nutri="rice_vinegar" data-base="5" value="5"><span>g</span></label><div class="ingredient-name">rice vinegar</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="14" data-nutri="hoisin" data-base="15" value="15"><span>g</span></label><div class="ingredient-name">hoisin sauce</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="15" data-nutri="zero" data-base="60" value="60"><span>g</span></label><div class="ingredient-name">water</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="16" data-nutri="cornstarch" data-base="3" value="3"><span>g</span></label><div class="ingredient-name">cornstarch</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="17" data-nutri="sesame_oil" data-base="2" value="2"><span>g</span></label><div class="ingredient-name">sesame oil<em>optional — set to 0 g if skipping</em></div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="18" data-nutri="chili_flakes" data-base="1" value="1"><span>g</span></label><div class="ingredient-name">chili flakes</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="19" data-nutri="garlic_powder" data-base="0.5" value="0.5"><span>g</span></label><div class="ingredient-name">garlic powder</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="20" data-nutri="ginger_powder" data-base="0.3" value="0.3"><span>g</span></label><div class="ingredient-name">ginger powder</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="21" data-nutri="ketchup" data-base="0" value="0"><span>g</span></label><div class="ingredient-name">ketchup<em>optional restaurant upgrade; set to 2 g if using</em></div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="22" data-nutri="oil" data-base="0" value="0"><span>g</span></label><div class="ingredient-name">oil for blooming chili<em>optional; set to ~4.5 g for 1 tsp</em></div></li></ul><div class="nutrition-note"><b>Live macros.</b> Change any ingredient amount and the nutrition updates with it. Different brands can vary slightly.</div></section><section class="method"><div class="section-head"><h2>Method</h2><small>6 steps</small></div><ol class="steps"><li>Mix tofu, water, soy sauce, neutral oil and brown sugar. Separately mix vital wheat gluten, garlic powder, onion powder and salt. Add wet to dry and stir only until combined — do not knead. Rest 15–20 minutes.</li><li>Shape into a thick patty, wrap loosely in foil and steam 25–30 minutes. Cool 5–10 minutes, then cut into bite-size pieces.</li><li>Toss with cornstarch and optional baking powder. Air fry at 190°C / 375°F for 10–14 minutes with a light oil spray, shaking halfway. Or pan-fry until golden.</li><li>Bloom the chili flakes briefly in a dry pan or in whatever amount of oil you enter above.</li><li>Add soy sauce, brown sugar, vinegar, hoisin, water, cornstarch, garlic powder, ginger powder and optional ketchup. Cook 30–60 seconds until glossy and thick.</li><li>Toss the crisp seitan in the sauce until coated. Add bell pepper, onion or carrot if you want, and serve over rice.</li></ol><div class="tip"><b>Kitchen note:</b> Optional ingredients start at the amount shown. Set sesame oil to 0 g to skip it, or type 2 g ketchup / ~4.5 g sauce oil if you use those upgrades.</div><div class="notes"><label>My notes <small>saved on this device</small></label><textarea placeholder="What would I change next time?"></textarea></div></section></div></article>
+  </div>
+</section>
+
+<section class="recipe-section" id="pancakes" data-index="3" data-title="Cottage Cheese Pancakes" data-short="Cottage Pancakes" style="--tone:#e7d09f">
+  <div class="section-inner">
+    <div class="hero"><div class="hero-copy"><div class="chapter">04 · soft + filling</div><h1>Cottage Cheese Pancakes</h1><p>The exact current version: one egg, 114 g 4% cottage cheese, wheat flour, banana, honey and 2% milk. No blueberries.</p></div><div class="orb" aria-hidden="true">🥞</div></div>
+    <article class="recipe-card"><div class="recipe-controls"><div class="serving-zone"><div><div class="eyebrow">Make this many servings</div><div class="small-note">Original recipe: 1 serving</div></div><div class="stepper"><button class="minus" type="button">−</button><input class="servings" type="text" inputmode="decimal" data-base="1" value="1"><button class="plus" type="button">+</button></div></div><div class="macro-zone"><div class="macro-title"><span>Live macros</span><span>batch · per serving</span></div><div class="macro-grid"><div class="macro" data-macro="0"><strong class="macro-batch">564</strong><span>Calories · batch</span><small><span class="macro-per">564</span>kcal / serving</small></div><div class="macro" data-macro="1"><strong class="macro-batch">28.4g</strong><span>Protein · batch</span><small><span class="macro-per">28.4</span>g / serving</small></div><div class="macro" data-macro="2"><strong class="macro-batch">87.2g</strong><span>Carbs · batch</span><small><span class="macro-per">87.2</span>g / serving</small></div><div class="macro" data-macro="3"><strong class="macro-batch">11.8g</strong><span>Fat · batch</span><small><span class="macro-per">11.8</span>g / serving</small></div><div class="macro" data-macro="4"><strong class="macro-batch">4.7g</strong><span>Fiber · batch</span><small><span class="macro-per">4.7</span>g / serving</small></div></div></div></div><div class="body-grid"><section class="ingredients"><div class="section-head"><h2>Ingredients</h2><small>tap an amount to edit</small></div><ul class="ingredient-list"><li class="group">Batter</li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="0" data-nutri="egg" data-base="50" value="50"><span>g</span></label><div class="ingredient-name">egg<em>1 large egg without shell</em></div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="1" data-nutri="cottage_cheese_4" data-base="114" value="114"><span>g</span></label><div class="ingredient-name">4% cottage cheese</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="2" data-nutri="wheat_flour" data-base="60" value="60"><span>g</span></label><div class="ingredient-name">wheat flour</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="3" data-nutri="banana" data-base="118" value="118"><span>g</span></label><div class="ingredient-name">banana<em>about 1 medium banana, edible portion</em></div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="4" data-nutri="honey" data-base="9" value="9"><span>g</span></label><div class="ingredient-name">honey<em>rough midpoint of 1–1½ tsp</em></div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="5" data-nutri="milk_2" data-base="60" value="60"><span>g</span></label><div class="ingredient-name">2% milk</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="6" data-nutri="zero" data-base="2" value="2"><span>g</span></label><div class="ingredient-name">baking powder<em>about ½ tsp</em></div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="7" data-nutri="oil" data-base="0" value="0"><span>g</span></label><div class="ingredient-name">oil for pan<em>leave 0 g if using only a spray</em></div></li></ul><div class="nutrition-note"><b>Live macros.</b> Change any ingredient amount and the nutrition updates with it. Different brands can vary slightly.</div></section><section class="method"><div class="section-head"><h2>Method</h2><small>6 steps</small></div><ol class="steps"><li>Mash the banana in a bowl, then whisk in the egg and honey until smooth.</li><li>Stir in the cottage cheese. Blend the mixture first if you want a smoother pancake texture.</li><li>Mix in the wheat flour and baking powder.</li><li>Pour in the milk gradually until the batter is thick but still pourable.</li><li>Heat a nonstick pan over medium. Use a light oil spray or enter the grams of oil you actually use above.</li><li>Cook about 2–3 minutes per side uncovered, then cover for the final 1–2 minutes if the centers need help finishing.</li></ol><div class="tip"><b>Kitchen note:</b> The 4% cottage cheese is correctly treated as a full-fat cottage cheese here. At 114 g it contributes roughly 5 g of fat by itself; the egg contributes another ~5 g.</div><div class="notes"><label>My notes <small>saved on this device</small></label><textarea placeholder="What would I change next time?"></textarea></div></section></div></article>
+  </div>
+</section>
+
+<section class="recipe-section" id="moroccan" data-index="4" data-title="Moroccan Tofu + Sweet Potatoes" data-short="Moroccan Tofu" style="--tone:#d9a06f">
+  <div class="section-inner"><div class="hero"><div class="hero-copy"><div class="chapter">05 · warm + spiced</div><h1>Moroccan Tofu + Sweet Potatoes</h1><p>Roasted tofu and sweet potatoes with cumin, turmeric, cinnamon and smoked paprika, finished with a lemon-cilantro aioli.</p></div><div class="orb" aria-hidden="true">🍠</div></div><article class="recipe-card"><div class="recipe-controls"><div class="serving-zone"><div><div class="eyebrow">Make this many servings</div><div class="small-note">Original recipe: 4 servings</div></div><div class="stepper"><button class="minus" type="button">−</button><input class="servings" type="text" inputmode="decimal" data-base="4" value="4"><button class="plus" type="button">+</button></div></div><div class="macro-zone"><div class="macro-title"><span>Live macros</span><span>batch · per serving</span></div><div class="macro-grid"><div class="macro" data-macro="0"><strong class="macro-batch">2215.1</strong><span>Calories · batch</span><small><span class="macro-per">553.8</span>kcal / serving</small></div><div class="macro" data-macro="1"><strong class="macro-batch">85.9g</strong><span>Protein · batch</span><small><span class="macro-per">21.5</span>g / serving</small></div><div class="macro" data-macro="2"><strong class="macro-batch">170.8g</strong><span>Carbs · batch</span><small><span class="macro-per">42.7</span>g / serving</small></div><div class="macro" data-macro="3"><strong class="macro-batch">147.6g</strong><span>Fat · batch</span><small><span class="macro-per">36.9</span>g / serving</small></div><div class="macro" data-macro="4"><strong class="macro-batch">32.8g</strong><span>Fiber · batch</span><small><span class="macro-per">8.2</span>g / serving</small></div></div></div></div><div class="body-grid"><section class="ingredients"><div class="section-head"><h2>Ingredients</h2><small>tap an amount to edit</small></div><ul class="ingredient-list"><li class="group">Sheet pan</li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="0" data-nutri="sweet_potato" data-base="680" value="680"><span>g</span></label><div class="ingredient-name">sweet potatoes</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="1" data-nutri="firm_tofu" data-base="425" value="425"><span>g</span></label><div class="ingredient-name">extra-firm tofu</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="2" data-nutri="oil" data-base="40" value="40"><span>g</span></label><div class="ingredient-name">olive oil</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="3" data-nutri="cumin" data-base="4" value="4"><span>g</span></label><div class="ingredient-name">ground cumin</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="4" data-nutri="turmeric" data-base="2" value="2"><span>g</span></label><div class="ingredient-name">turmeric</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="5" data-nutri="cinnamon" data-base="2" value="2"><span>g</span></label><div class="ingredient-name">cinnamon</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="6" data-nutri="paprika" data-base="2" value="2"><span>g</span></label><div class="ingredient-name">smoked paprika</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="7" data-nutri="zero" data-base="6" value="6"><span>g</span></label><div class="ingredient-name">salt</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="8" data-nutri="cayenne" data-base="0.5" value="0.5"><span>g</span></label><div class="ingredient-name">cayenne</div></li><li class="group">Lemon-cilantro aioli</li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="9" data-nutri="vegan_mayo" data-base="120" value="120"><span>g</span></label><div class="ingredient-name">vegan mayo</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="10" data-nutri="lemon_juice" data-base="15" value="15"><span>g</span></label><div class="ingredient-name">lemon juice</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="11" data-nutri="cilantro" data-base="15" value="15"><span>g</span></label><div class="ingredient-name">cilantro</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="12" data-nutri="agave" data-base="7" value="7"><span>g</span></label><div class="ingredient-name">agave</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="13" data-nutri="paprika" data-base="1" value="1"><span>g</span></label><div class="ingredient-name">smoked paprika</div></li></ul><div class="nutrition-note"><b>Live macros.</b> Change any ingredient amount and the nutrition updates with it. Different brands can vary slightly.</div></section><section class="method"><div class="section-head"><h2>Method</h2><small>6 steps</small></div><ol class="steps"><li>Heat the oven to 205°C / 400°F. Press the tofu for 10–15 minutes and cut into 2–3 cm cubes.</li><li>Cut the sweet potatoes into roughly 3 cm chunks. Toss them with about two-thirds of the olive oil and half the spice mixture.</li><li>Toss the tofu separately with the remaining oil and remaining spices.</li><li>Spread everything on a sheet pan and roast 15 minutes. Flip, then roast another 10–15 minutes until browned and tender.</li><li>Mix vegan mayo, lemon juice, cilantro, agave and the extra smoked paprika. Season to taste.</li><li>Serve the roasted tofu and sweet potatoes with the aioli drizzled over or alongside for dipping.</li></ol><div class="tip"><b>Kitchen note:</b> The cinnamon should stay subtle. It rounds out the cumin, turmeric and paprika instead of making the dish taste sweet.</div><div class="notes"><label>My notes <small>saved on this device</small></label><textarea placeholder="What would I change next time?"></textarea></div></section></div></article></div>
+</section>
+
+<section class="recipe-section" id="japchae" data-index="5" data-title="Trader Joe’s–Style Japchae Fried Rice" data-short="Japchae Fried Rice" style="--tone:#b8c7a5">
+  <div class="section-inner"><div class="hero"><div class="hero-copy"><div class="chapter">06 · chewy + savory</div><h1>Trader Joe’s–Style Japchae Fried Rice</h1><p>Your 650 g cooked-brown-rice batch with glass noodles and egg. No scallions required; onion is included as a zero-gram optional substitute.</p></div><div class="orb" aria-hidden="true">🍳</div></div><article class="recipe-card"><div class="recipe-controls"><div class="serving-zone"><div><div class="eyebrow">Make this many servings</div><div class="small-note">Original recipe: 6 servings</div></div><div class="stepper"><button class="minus" type="button">−</button><input class="servings" type="text" inputmode="decimal" data-base="6" value="6"><button class="plus" type="button">+</button></div></div><div class="macro-zone"><div class="macro-title"><span>Live macros</span><span>batch · per serving</span></div><div class="macro-grid"><div class="macro" data-macro="0"><strong class="macro-batch">2366.9</strong><span>Calories · batch</span><small><span class="macro-per">394.5</span>kcal / serving</small></div><div class="macro" data-macro="1"><strong class="macro-batch">58.9g</strong><span>Protein · batch</span><small><span class="macro-per">9.8</span>g / serving</small></div><div class="macro" data-macro="2"><strong class="macro-batch">351.8g</strong><span>Carbs · batch</span><small><span class="macro-per">58.6</span>g / serving</small></div><div class="macro" data-macro="3"><strong class="macro-batch">84g</strong><span>Fat · batch</span><small><span class="macro-per">14</span>g / serving</small></div><div class="macro" data-macro="4"><strong class="macro-batch">26.7g</strong><span>Fiber · batch</span><small><span class="macro-per">4.5</span>g / serving</small></div></div></div></div><div class="body-grid"><section class="ingredients"><div class="section-head"><h2>Ingredients</h2><small>tap an amount to edit</small></div><ul class="ingredient-list"><li class="group">Base</li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="0" data-nutri="brown_rice_cooked" data-base="650" value="650"><span>g</span></label><div class="ingredient-name">cooked brown rice</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="1" data-nutri="glass_noodles_dry" data-base="120" value="120"><span>g</span></label><div class="ingredient-name">dry dangmyeon / sweet-potato glass noodles</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="2" data-nutri="egg" data-base="150" value="150"><span>g</span></label><div class="ingredient-name">eggs, without shell<em>about 3 large eggs</em></div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="3" data-nutri="oil" data-base="30" value="30"><span>g</span></label><div class="ingredient-name">neutral oil<em>avocado or canola</em></div></li><li class="group">Vegetables</li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="4" data-nutri="carrot" data-base="200" value="200"><span>g</span></label><div class="ingredient-name">carrots, julienned</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="5" data-nutri="mushrooms" data-base="200" value="200"><span>g</span></label><div class="ingredient-name">mushrooms, sliced</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="6" data-nutri="spinach" data-base="150" value="150"><span>g</span></label><div class="ingredient-name">spinach or napa cabbage</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="7" data-nutri="onion" data-base="0" value="0"><span>g</span></label><div class="ingredient-name">yellow / white onion<em>optional scallion substitute; try 80–100 g</em></div></li><li class="group">Sauce</li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="8" data-nutri="soy_sauce" data-base="90" value="90"><span>g</span></label><div class="ingredient-name">soy sauce / tamari</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="9" data-nutri="sesame_oil" data-base="27.5" value="27.5"><span>g</span></label><div class="ingredient-name">sesame oil<em>original range 25–30 g</em></div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="10" data-nutri="sugar" data-base="38" value="38"><span>g</span></label><div class="ingredient-name">sugar</div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="11" data-nutri="garlic" data-base="18" value="18"><span>g</span></label><div class="ingredient-name">garlic, minced<em>about 5–6 cloves</em></div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="12" data-nutri="rice_vinegar" data-base="6.5" value="6.5"><span>g</span></label><div class="ingredient-name">rice vinegar<em>original range 5–8 g</em></div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="13" data-nutri="sesame_seeds" data-base="7" value="7"><span>g</span></label><div class="ingredient-name">toasted sesame seeds<em>optional finish</em></div></li></ul><div class="nutrition-note"><b>Live macros.</b> Change any ingredient amount and the nutrition updates with it. Different brands can vary slightly.</div></section><section class="method"><div class="section-head"><h2>Method</h2><small>6 steps</small></div><ol class="steps"><li>Bring 3–4 liters of unsalted water to a rolling boil. Fully submerge the dry dangmyeon and cook 6–7 minutes. Drain, rinse under cold water 15–20 seconds and cut into 3–4 cm pieces.</li><li>Mix the soy sauce, sesame oil, sugar, garlic and rice vinegar.</li><li>Heat about one-third of the neutral oil in a large wok or skillet over medium-high. Scramble the eggs softly, then remove and set aside.</li><li>Add another third of the oil. Stir-fry carrots and mushrooms 2–3 minutes. If using onion, cook it here. Add spinach or cabbage just until wilted.</li><li>Add the noodles and cooked brown rice. Spread them out and let them sit against the hot pan for 20–30 seconds before stirring; repeat once for more fried-rice texture.</li><li>Pour in the sauce, toss until glossy, then fold the egg back in. Finish with sesame seeds. No scallions needed.</li></ol><div class="tip"><b>Kitchen note:</b> If you skip scallions entirely, the dish is still structurally fine. If you want the aromatic lift, enter 80–100 g onion above and cook it with the carrots + mushrooms.</div><div class="notes"><label>My notes <small>saved on this device</small></label><textarea placeholder="What would I change next time?"></textarea></div></section></div></article></div>
+</section>
+
+<section class="recipe-section" id="breakfast" data-index="6" data-title="Bagel, Eggs + Walnuts" data-short="Bagel Breakfast" style="--tone:#d9c4a8">
+  <div class="section-inner"><div class="hero"><div class="hero-copy"><div class="chapter">07 · easy breakfast</div><h1>Bagel, Eggs + Walnuts</h1><p>Your simple breakfast: a Trader Joe’s cinnamon-raisin bagel, one egg, two servings of egg whites and 30 g walnuts.</p></div><div class="orb" aria-hidden="true">🥯</div></div><article class="recipe-card"><div class="recipe-controls"><div class="serving-zone"><div><div class="eyebrow">Make this many servings</div><div class="small-note">Original recipe: 1 serving</div></div><div class="stepper"><button class="minus" type="button">−</button><input class="servings" type="text" inputmode="decimal" data-base="1" value="1"><button class="plus" type="button">+</button></div></div><div class="macro-zone"><div class="macro-title"><span>Live macros</span><span>batch · per serving</span></div><div class="macro-grid"><div class="macro" data-macro="0"><strong class="macro-batch">565.5</strong><span>Calories · batch</span><small><span class="macro-per">565.5</span>kcal / serving</small></div><div class="macro" data-macro="1"><strong class="macro-batch">29.9g</strong><span>Protein · batch</span><small><span class="macro-per">29.9</span>g / serving</small></div><div class="macro" data-macro="2"><strong class="macro-batch">56.1g</strong><span>Carbs · batch</span><small><span class="macro-per">56.1</span>g / serving</small></div><div class="macro" data-macro="3"><strong class="macro-batch">26g</strong><span>Fat · batch</span><small><span class="macro-per">26</span>g / serving</small></div><div class="macro" data-macro="4"><strong class="macro-batch">4g</strong><span>Fiber · batch</span><small><span class="macro-per">4</span>g / serving</small></div></div></div></div><div class="body-grid"><section class="ingredients"><div class="section-head"><h2>Ingredients</h2><small>tap an amount to edit</small></div><ul class="ingredient-list"><li class="group">Breakfast</li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="0" data-nutri="tj_raisin_bagel" data-base="85" value="85"><span>g</span></label><div class="ingredient-name">Trader Joe’s cinnamon-raisin bagel<em>1 bagel; label used here is 85 g</em></div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="1" data-nutri="egg" data-base="50" value="50"><span>g</span></label><div class="ingredient-name">egg<em>1 large egg without shell</em></div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="2" data-nutri="egg_white" data-base="92" value="92"><span>g</span></label><div class="ingredient-name">egg whites<em>2 × 46 g servings</em></div></li><li class="ingredient"><label class="amount"><input class="gram-input" type="text" inputmode="decimal" data-index="3" data-nutri="walnuts" data-base="30" value="30"><span>g</span></label><div class="ingredient-name">walnuts<em>default nut; swap the grams if using another nut</em></div></li></ul><div class="nutrition-note"><b>Live macros.</b> Change any ingredient amount and the nutrition updates with it. Different brands can vary slightly.</div></section><section class="method"><div class="section-head"><h2>Method</h2><small>4 steps</small></div><ol class="steps"><li>Slice and toast the cinnamon-raisin bagel to your preferred level of crispness.</li><li>Whisk the whole egg and egg whites together with a pinch of salt and pepper if you want.</li><li>Cook the eggs in a nonstick pan over medium-low heat, stirring gently until just set.</li><li>Plate the toasted bagel with the eggs and 30 g walnuts on the side. If you change the walnut amount above, the macros update automatically.</li></ol><div class="tip"><b>Kitchen note:</b> The bagel nutrition profile uses an 85 g Trader Joe’s cinnamon-raisin bagel at 250 kcal, 9 g protein, 51 g carbs, 1.5 g fat and 2 g fiber.</div><div class="notes"><label>My notes <small>saved on this device</small></label><textarea placeholder="What would I change next time?"></textarea></div></section></div></article></div>
+</section>
+</main>
+
+<div class="toast" id="toast" aria-live="polite"></div>
+
+<script>
+const N={"dried_shiitake":[296,9.58,75.37,0.99,11.5],"firm_tofu":[144,17.27,2.78,8.72,2.3],"silken_tofu":[62,6.9,2.4,2.7,0.1],"oil":[884,0,0,100,0],"water_chestnuts":[50,0.88,12.3,0.06,2.5],"green_onion":[32,1.83,7.34,0.19,2.6],"iceberg":[14,0.9,2.97,0.14,1.2],"peanuts":[587,24.35,21.26,49.66,8.4],"hoisin":[200,0,45,0,0],"peanut_butter":[598,22.21,22.31,51.36,5],"rice_vinegar":[18,0,0.4,0,0],"sriracha":[92.3,1.54,20,0,0],"sugar":[387,0,99.98,0,0],"soy_sauce":[53,8.14,4.93,0.57,0.8],"sesame_oil":[884,0,0,100,0],"garlic":[149,6.36,33.06,0.5,2.1],"ginger":[80,1.82,17.77,0.75,2],"ginger_powder":[335,8.98,71.62,4.24,14.1],"cornstarch":[381,0.26,91.27,0.05,0.9],"garlic_powder":[331,16.55,72.73,0.73,9],"onion_powder":[341,10.41,79.12,1.04,15.2],"brown_sugar":[380,0.12,98.09,0,0],"honey":[304,0.3,82.4,0,0.2],"chili_flakes":[318,12.01,56.63,17.27,27.2],"vital_wheat_gluten":[400,76.67,13.33,3.33,0],"ketchup":[112,1.3,26,0.2,0.3],"cottage_cheese_4":[98,11.12,3.38,4.3,0],"egg":[143,12.56,0.72,9.51,0],"wheat_flour":[364,10.33,76.31,0.98,2.7],"banana":[89,1.09,22.84,0.33,2.6],"milk_2":[50,3.3,4.8,1.98,0],"brown_rice_cooked":[123,2.74,25.58,0.97,1.6],"glass_noodles_dry":[351,0.2,86.1,0.1,0.7],"carrot":[41,0.93,9.58,0.24,2.8],"mushrooms":[22,3.09,3.26,0.34,1],"spinach":[23,2.86,3.63,0.39,2.2],"sesame_seeds":[573,17.73,23.45,49.67,11.8],"onion":[40,1.1,9.34,0.1,1.7],"sweet_potato":[86,1.57,20.12,0.05,3],"cumin":[375,17.81,44.24,22.27,10.5],"turmeric":[312,9.68,67.14,3.25,22.7],"cinnamon":[247,3.99,80.59,1.24,53.1],"paprika":[282,14.14,53.99,12.89,34.9],"cayenne":[318,12.01,56.63,17.27,27.2],"vegan_mayo":[500,0,7.14,57.14,0],"lemon_juice":[22,0.35,6.9,0.24,0.3],"cilantro":[23,2.1,3.7,0.52,2.8],"agave":[310,0.09,76.37,0.45,0.2],"egg_white":[52,10.9,0.73,0.17,0],"walnuts":[654,15.23,13.71,65.21,6.7],"tj_raisin_bagel":[294.1176,10.5882,60,1.7647,2.3529],"zero":[0,0,0,0,0]};
+const recipeSections=[...document.querySelectorAll(".recipe-section")];
+const desktopLinks=[...document.querySelectorAll(".nav-item[data-index]")];
+const mobileLinks=[...document.querySelectorAll(".mobile-chip[data-index]")];
+const homeLinks=[...document.querySelectorAll(".home-link,.home-chip")];
+const currentTitle=document.getElementById("currentTitle");
+const copyBtn=document.getElementById("copyBtn");
+const resetBtn=document.getElementById("resetBtn");
+const toast=document.getElementById("toast");
+let activeIndex=-1;
+
+function num(v, fallback=0){
+  const n=parseFloat(String(v).replace(",","."));
+  return Number.isFinite(n)?n:fallback;
+}
+function pretty(v, decimals=1){
+  const p=10**decimals;
+  const n=Math.round((v+Number.EPSILON)*p)/p;
+  return Number.isInteger(n)?String(n):n.toFixed(decimals).replace(/0+$/," ").replace(/\.$/,"").trim();
+}
+function storageGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function storageSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function storageRemove(k){try{localStorage.removeItem(k)}catch(e){}}
+function recipeId(section){return section.id}
+function servingsKey(section){return `homecooked-v9-${recipeId(section)}-servings`}
+function noteKey(section){return `homecooked-v9-${recipeId(section)}-note`}
+function amountKey(section,input){return `homecooked-v9-${recipeId(section)}-ingredient-${input.dataset.index}`}
+
+function totals(section){
+  const t=[0,0,0,0,0];
+  section.querySelectorAll(".gram-input").forEach(input=>{
+    const grams=Math.max(0,num(input.value,0));
+    const vals=N[input.dataset.nutri]||N.zero;
+    for(let i=0;i<5;i++) t[i]+=vals[i]*grams/100;
+  });
+  return t;
+}
+function renderMacros(section){
+  const servingInput=section.querySelector(".servings");
+  const servings=Math.max(.01,num(servingInput.value,1));
+  const t=totals(section);
+  section.querySelectorAll(".macro").forEach((card,i)=>{
+    card.querySelector(".macro-batch").textContent=pretty(t[i],1)+(i===0?"":"g");
+    card.querySelector(".macro-per").textContent=pretty(t[i]/servings,1);
+  });
+}
+
+function saveAmount(section,input){storageSet(amountKey(section,input),String(Math.max(0,num(input.value,0))))}
+function saveServings(section){storageSet(servingsKey(section),section.querySelector(".servings").value)}
+
+function scaleServings(section,newValue){
+  const s=section.querySelector(".servings");
+  const oldValue=Math.max(.01,num(s.dataset.current,num(s.value,1)));
+  const next=Math.max(.25,num(newValue,oldValue));
+  const factor=next/oldValue;
+  section.querySelectorAll(".gram-input").forEach(input=>{
+    input.value=pretty(num(input.value,0)*factor,2);
+    saveAmount(section,input);
+  });
+  s.value=pretty(next,2);
+  s.dataset.current=String(next);
+  saveServings(section);
+  renderMacros(section);
+}
+
+function initRecipe(section){
+  const s=section.querySelector(".servings");
+  const storedS=num(storageGet(servingsKey(section)),0);
+  if(storedS>0) s.value=pretty(storedS,2);
+  s.dataset.current=s.value;
+
+  section.querySelectorAll(".gram-input").forEach(input=>{
+    const stored=storageGet(amountKey(section,input));
+    if(stored!==null){
+      input.value=pretty(num(stored,num(input.dataset.base,0)),2);
+    } else if(storedS>0){
+      input.value=pretty(num(input.dataset.base,0)*(storedS/num(s.dataset.base,1)),2);
+    }
+    input.addEventListener("focus",()=>input.select());
+    input.addEventListener("input",()=>{saveAmount(section,input);renderMacros(section)});
+    input.addEventListener("blur",()=>{
+      const v=Math.max(0,num(input.value,0));
+      input.value=pretty(v,2); saveAmount(section,input); renderMacros(section);
+    });
+  });
+
+  section.querySelector(".minus").addEventListener("click",()=>scaleServings(section,Math.max(.25,num(s.value,1)-.25)));
+  section.querySelector(".plus").addEventListener("click",()=>scaleServings(section,num(s.value,1)+.25));
+  s.addEventListener("focus",()=>s.select());
+  s.addEventListener("change",()=>scaleServings(section,s.value));
+
+  const note=section.querySelector("textarea");
+  note.value=storageGet(noteKey(section))||"";
+  note.addEventListener("input",()=>storageSet(noteKey(section),note.value));
+  renderMacros(section);
+}
+recipeSections.forEach(initRecipe);
+
+function setActive(index){
+  activeIndex=index;
+  const onHome=index<0;
+  currentTitle.textContent=onHome?"Home Cooked":recipeSections[index].dataset.title;
+  copyBtn.hidden=onHome;
+  resetBtn.hidden=onHome;
+
+  document.querySelectorAll(".nav-item,.mobile-chip").forEach(el=>el.classList.remove("active"));
+  if(onHome){
+    homeLinks.forEach(el=>el.classList.add("active"));
+  } else {
+    desktopLinks[index]?.classList.add("active");
+    mobileLinks[index]?.classList.add("active");
+    mobileLinks[index]?.scrollIntoView({block:"nearest",inline:"center"});
+    copyBtn.textContent=`Copy ${recipeSections[index].dataset.short}`;
+  }
+}
+
+function detectActive(){
+  const marker=window.innerHeight*.38;
+  const home=document.getElementById("home");
+  const homeRect=home.getBoundingClientRect();
+  if(homeRect.top<=marker && homeRect.bottom>marker){setActive(-1);return}
+  let best=-1,bestDistance=Infinity;
+  recipeSections.forEach((s,i)=>{
+    const r=s.getBoundingClientRect();
+    if(r.top<=marker && r.bottom>marker){best=i;bestDistance=0;return}
+    const d=Math.abs(r.top-marker);
+    if(d<bestDistance){best=i;bestDistance=d}
+  });
+  if(best>=0)setActive(best);
+}
+
+if("IntersectionObserver" in window){
+  const observed=[document.getElementById("home"),...recipeSections];
+  const io=new IntersectionObserver(()=>detectActive(),{threshold:[0,.1,.25,.5,.75]});
+  observed.forEach(el=>io.observe(el));
+} else {
+  window.addEventListener("scroll",detectActive,{passive:true});
+}
+window.addEventListener("resize",detectActive,{passive:true});
+requestAnimationFrame(detectActive);
+
+function showToast(msg){
+  toast.textContent=msg;
+  toast.style.cssText="position:fixed;z-index:120;left:50%;bottom:20px;transform:translateX(-50%);background:#302d27;color:#fff;border-radius:999px;padding:9px 13px;font-size:9.5px;box-shadow:0 10px 30px rgba(0,0,0,.14)";
+  clearTimeout(showToast.t);
+  showToast.t=setTimeout(()=>toast.removeAttribute("style"),1400);
+}
+
+async function copyText(text){
+  if(navigator.clipboard && window.isSecureContext){
+    try{await navigator.clipboard.writeText(text);return true}catch(e){}
+  }
+  try{
+    const ta=document.createElement("textarea");
+    ta.value=text;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";
+    document.body.appendChild(ta);ta.select();ta.setSelectionRange(0,text.length);
+    const ok=document.execCommand("copy");ta.remove();return ok;
+  }catch(e){return false}
+}
+
+copyBtn.addEventListener("click",async()=>{
+  if(activeIndex<0)return;
+  const section=recipeSections[activeIndex];
+  const servings=section.querySelector(".servings").value;
+  const ingredients=[...section.querySelectorAll(".ingredient")].map(row=>{
+    const input=row.querySelector(".gram-input");
+    const name=row.querySelector(".ingredient-name").childNodes[0].textContent.trim();
+    return `• ${pretty(num(input.value,0),2)} g ${name}`;
+  }).join("\n");
+  const steps=[...section.querySelectorAll(".steps li")].map((li,i)=>`${i+1}. ${li.textContent.trim()}`).join("\n");
+  const t=totals(section);
+  const names=["Calories","Protein","Carbs","Fat","Fiber"];
+  const macros=names.map((name,i)=>`${name}: ${pretty(t[i],1)}${i===0?" kcal":" g"} batch · ${pretty(t[i]/Math.max(.01,num(servings,1)),1)}${i===0?" kcal":" g"} / serving`).join("\n");
+  const text=`${section.dataset.title}\nServings: ${servings}\n\nINGREDIENTS\n${ingredients}\n\nMETHOD\n${steps}\n\nMACROS\n${macros}`;
+  const ok=await copyText(text);
+  showToast(ok?`${section.dataset.short} copied`:"Copy is blocked in this preview");
+});
+
+resetBtn.addEventListener("click",()=>{
+  if(activeIndex<0)return;
+  const section=recipeSections[activeIndex];
+  const s=section.querySelector(".servings");
+  const base=num(s.dataset.base,1);
+  s.value=pretty(base,2);s.dataset.current=String(base);storageRemove(servingsKey(section));
+  section.querySelectorAll(".gram-input").forEach(input=>{
+    input.value=pretty(num(input.dataset.base,0),2);storageRemove(amountKey(section,input));
+  });
+  renderMacros(section);
+  showToast(`${section.dataset.short} reset`);
+});
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js?v=2', {updateViaCache:'none'}).catch(()=>{});
+  });
+}
+</script>
+
+</body>
+</html>
