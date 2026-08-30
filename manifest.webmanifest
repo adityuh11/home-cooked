@@ -1,7 +1,7 @@
 {
-  "name": "Home Cooked",
-  "short_name": "Home Cooked",
-  "description": "A personal recipe book with editable servings, ingredient amounts, notes, and live macros.",
+  "name": "Recipe Book",
+  "short_name": "Recipe Book",
+  "description": "A personal recipe book with editable servings ingredient amounts notes and live macros",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
