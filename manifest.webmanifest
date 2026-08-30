@@ -1,0 +1,13 @@
+{
+  "name": "Home Cooked",
+  "short_name": "Home Cooked",
+  "description": "A personal recipe book with editable servings, ingredient amounts, notes, and live macros.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f1e8",
+  "theme_color": "#f6f1e8",
+  "icons": [
+    {"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
