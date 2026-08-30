@@ -1,5 +1,5 @@
-# Home Cooked
+# Recipe Book
 
-A personal recipe book PWA with editable servings, ingredient amounts, live macros, saved notes, and offline support.
+A personal recipe book PWA with editable servings ingredient amounts live macros and saved notes
 
-Published with GitHub Pages.
+Published with GitHub Pages
